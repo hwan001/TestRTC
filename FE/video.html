@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>WebRTC 1:1 Demo</title>
+	</head>
+	<body>
+		<h2>📷 Local Video</h2>
+		<video id="localVideo" autoplay playsinline muted width="320"></video>
+
+		<h2>📺 Remote Video</h2>
+		<video id="remoteVideo" autoplay playsinline muted width="320"></video>
+
+		<br />
+		<input id="userId" placeholder="Your ID (e.g. A)" />
+		<input id="targetId" placeholder="Target ID (e.g. B)" />
+		<button onclick="join()">Join</button>
+		<button onclick="startCall()">📞 Start Call</button>
+
+		<script src="video.js"></script>
+	</body>
+</html>
