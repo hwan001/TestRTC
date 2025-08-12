@@ -2,6 +2,8 @@
 FROM maven:3.9-eclipse-temurin-17 AS build
 WORKDIR /src
 
+RUN echo "JAVA_HOME=$JAVA_HOME" && java -version && javac -version && mvn -v
+
 COPY pom.xml .
 RUN mvn -q -B -DskipTests dependency:go-offline
 
