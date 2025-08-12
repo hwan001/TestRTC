@@ -2,7 +2,7 @@ name: Build and Push Docker Image to Harbor
 
 on:
   push:
-    tags: [ 'be-*', 'fe-*', 'ngixn-*' ]
+    tags: [ 'be-*', 'fe-*', 'nginx-*' ]
   release:
     types: [ published ]     # 릴리스 Publish 시 실행
   workflow_dispatch:
