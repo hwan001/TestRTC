@@ -54,7 +54,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
-		
+
 		<!-- Json -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -87,6 +87,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
+				<configuration>
+					<layered>true</layered>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
