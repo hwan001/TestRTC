@@ -1,4 +1,4 @@
-const socket = new WebSocket("wss://testrtc.avgmax.team/signaling");
+const socket = new WebSocket("wss://testrtc.avgmax.team/api/signaling");
 
 const pendingCandidates = []; // ICE 후보 임시 저장용 큐
 let localStream = null;
