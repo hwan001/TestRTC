@@ -74,7 +74,7 @@
 
 	<build>
 		<plugins>
-			<!-- ✅ JDK 컴파일 설정 -->
+			<!-- JDK 컴파일 설정 -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.11.0</version>
