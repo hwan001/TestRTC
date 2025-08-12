@@ -12,12 +12,17 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # 🏃 Runtime Stage
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:17-jre
 
 WORKDIR /app
 
-COPY --from=build /app/target/*.jar app.jar
+#COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /layers/dependencies/           /app/
+COPY --from=build /layers/snapshot-dependencies/  /app/
+COPY --from=build /layers/spring-boot-loader/     /app/
+COPY --from=build /layers/application/            /app/
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java","org.springframework.boot.loader.JarLauncher"]
+# ENTRYPOINT ["java", "-jar", "app.jar"]
