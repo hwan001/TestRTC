@@ -32,4 +32,6 @@ COPY --from=build /layers/spring-boot-loader/    /app/
 COPY --from=build /layers/application/           /app/
 
 EXPOSE 8080
-ENTRYPOINT ["java","org.springframework.boot.loader.JarLauncher"]
+# 아래 경로는 Spring boot 버전 이슈로 Error: Could not find or load main class org.springframework.boot.loader.JarLauncher
+# ENTRYPOINT ["java","org.springframework.boot.loader.JarLauncher"]
+ENTRYPOINT ["java","org.springframework.boot.loader.launch.JarLauncher"]
